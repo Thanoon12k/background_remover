@@ -11,10 +11,12 @@ The Image Background Remover Website is a powerful online tool designed to effor
 ## Features 🛠️
 
 - Remove Background in One Click And Download it as PNG
-- Very Fast Processing
-- Easy To Use ( just upload your image )
-- Friendly  UI
-- No Lags Or Adds In It
+- **Very Fast Processing**
+- **Easy To Use ( just upload your image )**
+- **Friendly  UI**
+- **No Lags Or Adds In It**
+- **Flexible API**: Whether you're on a desktop, mobile or any other platform, our API endpoint    ```api/remove-bg/``` ensures you can fetch your images anytime, anywhere.
+- **Efficient Workflow**: Each day, the initial 50 operations are driven by [remove.bg ](https://www.remove.bg/) Subsequently, our reliable Python backend seamlessly steps in, guaranteeing unlimited, consistent, and flawless service.
 
 
 
@@ -59,6 +61,27 @@ Ensure you have Python - version 3.11.5 recommanded - and pip installed on your 
     python manage.py runserver
     ```
 Visit http://localhost:8000 in your browser to see the website in action! .
+
+# Developer Usage 🛠️
+
+For those interested in integrating our background removal service into their applications, we offer a straightforward API endpoint.
+
+## Accessing the API
+
+**Endpoint**: `api/remove-bg/`
+
+To use our API:
+
+1. **POST Request**: Send a POST request to the endpoint with your image attached.
+2. **Response**: You will receive the processed image with the background removed in PNG format.
+
+
+### Example using `curl`:
+
+  ```bash
+     curl -X POST -F "image=@path_to_your_image jpg" http://127.0.0.1:8000/api/remove-bg/
+  ```
+
 
 
 ## Contributing 🤝
