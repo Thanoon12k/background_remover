@@ -1,0 +1,33 @@
+image_background_remover/
+    .gitignore
+    best_readme.txt
+    db.sqlite3
+    manage.py
+    project_tree.txt
+    README.md
+    requirements.txt
+    utils.py
+base/
+    asgi.py
+    settings.py
+    urls.py
+    wsgi.py
+    __init__.py
+HTMLs/
+    index copy.html
+    index.html
+mainapp/
+    admin.py
+    apps.py
+    models.py
+    remover.py
+    tests.py
+    urls.py
+    views.py
+    __init__.py
+    migrations/
+        __init__.py
+media/
+    output.png
+    remover.jpg
+    assets/
