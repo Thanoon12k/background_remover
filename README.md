@@ -1,22 +1,24 @@
 ## Image Background Remover Website 🖼️
 
-The Image Background Remover Website is a powerful online tool designed to effortlessly strip away the background of any image. Built with precision and user experience in mind, the platform provides a seamless way for users to upload a picture and instantly download the transformed version without its background. Whether you're a professional designer on a tight schedule or just someone looking to edit a personal photo, this tool makes background removal a breeze.
+An online tool for effortlessly removing image backgrounds. Designed for precision and user-friendliness, users can instantly upload and download edited photos. Ideal for both professionals and personal use.
 
 
 ## Beneficiaries 🎯
 
 - Users Seeking Quick Edits: For those in need of rapid background removals.
-- Good First Commit Project For New Djang Developers
+- Good First Commit Project For New Django Developers
 
 ## Features 🛠️
 
 - Remove Background in One Click And Download it as PNG
-- **Very Fast Processing**
-- **Easy To Use ( just upload your image )**
-- **Friendly  UI**
-- **No Lags Or Adds In It**
-- **Flexible API**: Whether you're on a desktop, mobile or any other platform, our API endpoint    ```api/remove-bg/``` ensures you can fetch your images anytime, anywhere.
-- **Efficient Workflow**: Each day, the initial 50 operations are driven by [remove.bg ](https://www.remove.bg/) Subsequently, our reliable Python backend seamlessly steps in, guaranteeing unlimited, consistent, and flawless service.
+- Very Fast Processing
+- Easy To Use ( just upload your image )
+- Friendly  UI
+- No Lags Or Adds In It
+- Flexible API: 
+Whether you're on a desktop, mobile or any other platform, our API endpoint    ```api/remove-bg/``` ensures you can fetch your images anytime, anywhere.
+- Efficient Workflow:
+ Each day, the initial 50 operations are driven by [remove.bg ](https://www.remove.bg/) Subsequently, our reliable Python backend seamlessly steps in, guaranteeing unlimited, consistent, and flawless service.
 
 
 
@@ -31,7 +33,7 @@ Ensure you have Python - version 3.11.5 recommanded - and pip installed on your 
 
 1. **Clone the repository.**
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:Thanoon12k/backgroud_remover.git
    ```
 2. **Navigate to the project directory.**
     ```bash
@@ -92,3 +94,6 @@ Open to developers and enthusiasts who'd like to collaborate and enhance this pr
 
 - [Background Remover API](https://www.remove.bg/) for their API which powers this project.
 - [ rembg Project ](https://github.com/danielgatis/rembg) for their Python Package which powers this project.
+
+
+For live demonstrations, visit our website [ Live-WebSite](http://background1remover.pythonanywhere.com/)
