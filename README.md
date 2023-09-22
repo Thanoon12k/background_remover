@@ -22,7 +22,7 @@ The Image Background Remover Website is a powerful online tool designed to effor
  ## Getting Started with Development 🚀
 
 ### Prerequisites
-Ensure you have Python and pip installed on your machine.
+Ensure you have Python - version 3.11.5 recommanded - and pip installed on your machine.
 ### Installation
 
 ## Steps:
@@ -68,3 +68,4 @@ Open to developers and enthusiasts who'd like to collaborate and enhance this pr
 ## Acknowledgments:
 
 - [Background Remover API](https://www.remove.bg/) for their API which powers this project.
+- [ rembg Project ](https://github.com/danielgatis/rembg) for their Python Package which powers this project.
