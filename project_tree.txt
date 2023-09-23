@@ -32,9 +32,6 @@ mainapp/
 media/
     input.png
     removedBg_out.png
-    assets/
-        logo.png
-        splash.png
 rest_api_app/
     admin.py
     apps.py
