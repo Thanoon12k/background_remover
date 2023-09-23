@@ -1,4 +1,5 @@
 import os
+from ..env_variables import SeceretVariables
 import dj_database_url 
 
 from pathlib import Path
@@ -72,7 +73,19 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = 'media/'
-STATIC_ROOT = str(BASE_DIR)+ '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AWS_ACCESS_KEY_ID = 'AKIA54O3DORFDOYAZTGK'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'background-remover-heruku'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_DEFAULT_ACL = 'public-read-write'
+AWS_QUERYSTRING_AUTH = False
+
+# S3 as the file storage for media files
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Media URL served from S3
+MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN

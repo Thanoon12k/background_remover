@@ -48,11 +48,11 @@ def remove_comments_from_file(input_filepath, remove_empty_lines=True):
 def main():
     project_path = str(Path(__file__).resolve().parent)
     
-    file_path = "base\settings.py"
-    output_path = remove_comments_from_file(file_path,remove_empty_lines=True)
-    print(f"Cleaned file saved to: {output_path}")
+    # file_path = "base\settings.py"
+    # output_path = remove_comments_from_file(file_path,remove_empty_lines=True)
+    # print(f"Cleaned file saved to: {output_path}")
 
-    # generate_project_tree(project_path=project_path,exclude=['.env', '.git','static','__pycache__','__init__.py'])
+    generate_project_tree(project_path=project_path,exclude=['.env','.venv', '.git','static','__pycache__','__init__.py'])
 
 
 

@@ -3,9 +3,11 @@ image_background_remover/
     best_readme.txt
     db.sqlite3
     manage.py
+    Procfile
     project_tree.txt
     README.md
     requirements.txt
+    runtime.txt
     utils.py
 base/
     asgi.py
@@ -13,9 +15,7 @@ base/
     urls.py
     wsgi.py
     __init__.py
-HTMLs/
-    index copy.html
-    index.html
+    staticfiles/
 mainapp/
     admin.py
     apps.py
@@ -27,7 +27,22 @@ mainapp/
     __init__.py
     migrations/
         __init__.py
+    templates/
+        index.html
 media/
-    output.png
-    remover.jpg
+    input.png
+    removedBg_out.png
     assets/
+        logo.png
+        splash.png
+rest_api_app/
+    admin.py
+    apps.py
+    models.py
+    serializers.py
+    tests.py
+    urls.py
+    views.py
+    __init__.py
+    migrations/
+        __init__.py
