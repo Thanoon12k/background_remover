@@ -42,5 +42,6 @@ def Py_remove_background():
     output_image = remove(IMG)
     
     output_image.save(removed_path)
+    print("removed using python package . ")     
     return removed_path
 

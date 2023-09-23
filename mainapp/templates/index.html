@@ -35,6 +35,7 @@
           border-top-right-radius: 25px;
           height: 400px;
           transition: height 0.3s ease-in-out;
+          
         }
         .card:hover .card-img-top {
           height: 420px;
@@ -144,22 +145,20 @@
     <div class="container my-5">
       <div class="row justify-content-center">
           <div class="col-md-8">
-              <div class="card">
-  
-                  {% if request.session.output_image %}
-                      <img src="{{ request.session.input_image }}" class="card-img-top" alt="Input image">
-                      <img src="{{ request.session.output_image }}" class="card-img-top" alt="Processed image">
-                  {% else %}
-                      <img src="media/assets/splash.png" class="card-img-top" alt="background image">
-                  {% endif %}
-  
+            <div class="card">
+              {% if output_image %}
+                  <img src="{{ input_image }}" class="card-img-top" alt="Input image">
+                  <img src="{{ output_image }}" class="card-img-top" alt="Processed image">
+              {% else %}
+                  <img src="media/assets/splash.png" class="card-img-top" alt="background image">
+              {% endif %}
                   <div class="card-body">
                       <h1 class="card-title text-center mb-4">Remove Image Background</h1>
                       <p class="card-text">Remove the background of any image with just one click.</p>
   
-                      {% if not request.session.output_image %}
-                          <form method="post" enctype="multipart/form-data" action="{% url 'process_image' %}">
-                              {% csrf_token %}
+                      {% if not output_image %}
+                      <form method="post" enctype="multipart/form-data" action="{% url 'process_image' %}">
+                        {% csrf_token %}
                               <div class="form-group">
                                   <input type="file" name="image" class="form-control" id="imageInput" accept=".jpg , .jpeg , .png">
                               </div>
@@ -168,6 +167,7 @@
                           </form>
                       {% else %}
                           <form method="post" action="{% url 'download_image' %}">
+                            {% csrf_token %}
                               <input name="download_image" value="yes" hidden>
                               <button type="submit" class="btn btn-primary btn-block download">Download Converted Image</button>
                           </form>
