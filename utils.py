@@ -52,7 +52,7 @@ def main():
     # output_path = remove_comments_from_file(file_path,remove_empty_lines=True)
     # print(f"Cleaned file saved to: {output_path}")
 
-    generate_project_tree(project_path=project_path,exclude=['.env','.venv', '.git','static','__pycache__','__init__.py'])
+    generate_project_tree(project_path=project_path,exclude=['.env','.venv', '.git','admin','rest_framework','__pycache__','__init__.py'])
 
 
 

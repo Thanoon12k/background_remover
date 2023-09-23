@@ -1,6 +1,7 @@
 import os
 import dj_database_url 
 
+
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tdwu0nzqx98fuwfqwo5tk8!mdo)-(m$7=8r_sx1)r&zg17rciw'
@@ -44,11 +45,10 @@ TEMPLATES = [
 ]
 WSGI_APPLICATION = 'base.wsgi.application'
 
+
 DATABASES = {
     'default': dj_database_url.config()
 }
-
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -69,23 +69,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+
+MEDIA_URL = 'media/'
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_ROOT = str(BASE_DIR)+ '/static/'
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-AWS_ACCESS_KEY_ID = 'AKIA54O3DORFDOYAZTGK'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'background-remover-heruku'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_DEFAULT_ACL = 'public-read-write'
-AWS_QUERYSTRING_AUTH = False
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # S3 as the file storage for media files
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media URL served from S3
-MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN

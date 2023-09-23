@@ -5,6 +5,7 @@ image_background_remover/
     manage.py
     Procfile
     project_tree.txt
+    pythonanywhere_wsgi.txt
     README.md
     requirements.txt
     runtime.txt
@@ -43,3 +44,7 @@ rest_api_app/
     __init__.py
     migrations/
         __init__.py
+static/
+    images/
+        logo.png
+        splash.png
