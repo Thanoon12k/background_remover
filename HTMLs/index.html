@@ -16,7 +16,7 @@
         h1, h2, h3, h4, h5, h6 {
           font-family: 'Poppins', sans-serif;
         }
-        
+
         /* Card Styling */
         .card {
           border-radius: 25px;
@@ -66,7 +66,7 @@
           box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
         }
         .btn-primary {
-        
+
           border-radius: 25px;
           font-size: 1.2rem;
           padding: 15px 30px;
@@ -88,7 +88,7 @@
   background-color: #6b97ff;
   border-color: #6b97ff;
 }
-    
+
         /* Footer Styling */
         .footer {
           background-color: #343a40;
@@ -138,7 +138,7 @@
   transform: translateY(-5px);
 }
 </style>
-  
+
   </head>
   <body>
     <div class="container my-5">
@@ -148,9 +148,9 @@
            {%if output_image %}
            <img src="{{input_image}}" class="card-img-top" alt="background image">
            <img src="{{output_image}}" class="card-img-top" alt="background image">
-           
+
         {%else%}
-            <img src="media/remover.jpg" class="card-img-top" alt="background image">
+            <img src="static/images/splash.png" class="card-img-top" alt="background image">
             {%endif%}
             <div class="card-body">
               <h1 class="card-title text-center mb-4">Remove Image Background</h1>
@@ -158,8 +158,8 @@
               <form method="post"enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
-                  
-                  <input type="file" name="image_file" class="form-control" id="imageInput" accept=".jpg , .jpeg , .png">
+
+                  <input type="file" name="image" class="form-control" id="imageInput" accept=".jpg , .jpeg , .png">
                 </div>
 
                 {%if not output_image %}
@@ -169,13 +169,13 @@
                <input name="download_image" value="yes" hidden>
 
                <button type="submit" class="btn btn-primary btn-block download">Download Converted Image</button>
-              
+
                  {%endif%}
-               
+
               </form>
               <br>
-              
-               
+
+
             </div>
             <div class="card-footer">
               <small class="text-muted">Last updated 13 Mar 2023</small>
@@ -205,7 +205,7 @@
     </div>
   </footer>
   <!-- End Footer Section -->
-  
+
     <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>

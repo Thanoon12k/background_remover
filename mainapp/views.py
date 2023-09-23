@@ -1,42 +1,37 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import os
-from .remover import remove_bg
+from .remover import api_remove_bg,Py_remove_background
+import requests
+from base.settings import BASE_DIR
 
 def Index(request):
-     if request.method=='GET':
-          clean()
-          return render(request, 'index.html')
-     elif request.method == 'POST':
-          print('post:',request.POST)
-          if   request.FILES.get('image_file'):
-               input_path = request.FILES['image_file']
+     print("new request arrive >>> ")
+     if request.method == 'POST':
 
-               file_path = 'media/'+'output.png'
-               with open(file_path, 'wb') as f:
-                    f.write(input_path.read())
-               remove_bg(file_path,'output.png')
+            print("it iss post request  >>> ")
+            if  request.FILES.get('image') :     # post request to remove bakground
+               IMG = request.FILES['image']
+               save_path = str(BASE_DIR)+"/media/input.png"
+               print("requested image to start save >>> ",save_path)
+               with open(save_path, 'wb') as f:
+
+                    f.write(IMG.read())
+               print("image saved  to >>> ",save_path)
+               removed_path=api_remove_bg()
+
                return render(request, 'index.html',{
-               'output_image':'media/'+'output.png',
-               'input_image':file_path
+                'input_image':save_path,
+               'output_image':removed_path
+
                })
-          elif 'download_image' in request.POST:
-               file_path ='media/output.png'
-               with open(file_path, 'rb') as pdf_file:
-                    response = HttpResponse(pdf_file.read(), content_type='audio/mp3')
+
+            elif 'download_image' in request.POST:#post rerquest to download
+               output_path = str(BASE_DIR)+"/media/removedBg_out.png"
+               with open(output_path, 'rb') as f:
+                    response = HttpResponse(f.read(), content_type='image/png')
                     response[f'Content-Disposition'] = f'attachment; filename="output.png"'
                     return response
+            print("error in post request  >>> ")
      return render(request, 'index.html')
 
 
-def clean():
-    
-    folder_path='media/'
-    for filename in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, filename)
-        try:
-            if os.path.isfile(file_path) :
-                os.remove(file_path)
-        except Exception as e:
-            print(f"Error deleting {file_path} : {e}")
-         
