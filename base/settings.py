@@ -1,5 +1,4 @@
 import os
-from ..env_variables import SeceretVariables
 import dj_database_url 
 
 from pathlib import Path
@@ -73,6 +72,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATIC_ROOT = str(BASE_DIR)+ '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
