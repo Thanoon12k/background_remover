@@ -75,6 +75,14 @@ For those interested in integrating our background removal service into their ap
 To use our API:
 
 1. **POST Request**: Send a POST request to the endpoint with your image attached.
+    ### Parameters
+
+    `image`
+
+    - **Type**: File (Image)
+    - **Required**: Yes
+    - **Description**: The image file from which the background needs to be removed. Supported formats include JPG, PNG, etc.
+
 2. **Response**: You will receive the processed image with the background removed in PNG format.
 
 
